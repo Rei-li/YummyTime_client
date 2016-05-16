@@ -9,11 +9,11 @@
   },
   "scripts": {
     "build": "./node_modules/.bin/ember build",
-    "start": "./node_modules/.bin/ember server --environment production --live-reload=false",
+    "start": "./node_modules/.bin/ember server",
     "test": "./node_modules/.bin/ember test",
     "postinstall": "./node_modules/.bin/bower install"
   },
-  "repository": "https://github.com/yandex-shri-minsk-2016/yummy-time/",
+  "repository": "https://github.com/Rei-li/YummyTime_client/",
   "engines": {
     "node": ">= 0.10.0"
   },
