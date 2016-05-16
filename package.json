@@ -47,6 +47,7 @@
     "ember-websockets": "3.0.0"
   },
   "dependencies": {
+    "bower": "^1.7.9",
     "ember-cli-selectize": "^0.5.2",
     "ember-simple-auth": "^1.1.0-beta.4",
     "ember-simple-auth-token": "^1.1.1",
