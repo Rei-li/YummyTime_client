@@ -4,7 +4,7 @@ module.exports = function(environment) {
   const ENV = {
     modulePrefix: 'client',
     environment,
-    host: 'https://my-yummytime-server.herokuapp.com',
+    host: 'http://127.0.0.1:4200',
     baseURL: '/',
     locationType: 'auto',
     namespace: '',
