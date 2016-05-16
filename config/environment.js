@@ -4,7 +4,7 @@ module.exports = function(environment) {
   const ENV = {
     modulePrefix: 'client',
     environment,
-    host: 'http://localhost:3000',
+    host: 'https://still-lake-57662.herokuapp.com/',
     baseURL: '/',
     locationType: 'auto',
     namespace: '',
