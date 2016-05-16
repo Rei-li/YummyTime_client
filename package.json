@@ -9,7 +9,7 @@
   },
   "scripts": {
     "build": "./node_modules/.bin/ember build",
-    "start": "./node_modules/.bin/ember server --environment production",
+    "start": "./node_modules/.bin/ember server --environment production --live-reload=false",
     "test": "./node_modules/.bin/ember test",
     "postinstall": "./node_modules/.bin/bower install"
   },
