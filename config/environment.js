@@ -4,7 +4,7 @@ module.exports = function(environment) {
   const ENV = {
     modulePrefix: 'client',
     environment,
-    host: 'https://still-lake-57662.herokuapp.com',
+    host: 'https://my-yummytime-server.herokuapp.com',
     baseURL: '/',
     locationType: 'auto',
     namespace: '',
@@ -66,7 +66,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    ENV.host = 'https://still-lake-57662.herokuapp.com';
+    ENV.host = 'https://my-yummytime-server.herokuapp.com';
     ENV.namespace = '';
     ENV['ember-simple-auth-token'].serverTokenEndpoint = `${ENV.namespace}/auth/token`;
     ENV.torii.providers['google-oauth2'].redirectUri = ENV.host;
