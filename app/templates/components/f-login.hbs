@@ -1,0 +1,19 @@
+<form class="f-default f-login">
+  <h2 class="f-default__title">Авторизация</h2>
+
+  <div class="f-default__wrapper">
+    {{b-input model=this type='email' valuePath='identification' placeholder='e-mail'}}
+    {{b-input model=this type='password' valuePath='password' placeholder='password'}}
+  </div>
+
+  <button {{action "submit"}} type="submit"
+          class="button _submit f-login__button">Войти</button>
+
+  {{#link-to 'register' class="f-login__link"}}Зарегистрироваться{{/link-to}}
+
+  <ul class="f-login__social">
+    <li><a {{action 'authenticateVia' 'google-oauth2'}} href=""
+           class="f-login__link f-login__social-link">Войти через Google</a></li>
+  </ul>
+
+</form>

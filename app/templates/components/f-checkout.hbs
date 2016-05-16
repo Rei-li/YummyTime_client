@@ -1,0 +1,13 @@
+<form class="f-default f-checkout">
+
+  <h2 class="f-default__title">Отправить уведомление</h2>
+
+  {{b-order-description order=order}}
+
+  <div class="f-default__row">
+
+    {{b-textarea model=this valuePath='message' rows='4' placeholder='Введите сообщение'}}
+    <button {{action 'submit'}} type="submit" class="button _submit">Отправить уведомление</button>
+  </div>
+
+</form>

@@ -1,0 +1,40 @@
+*
+*:before
+*:after
+  box-sizing border-box
+img
+  display block
+button
+  background transparent
+  border 0
+  cursor pointer
+  outline none
+
+textarea
+  overflow-y auto
+input,textarea, select, button
+  font-family Arial, Helvetica, sans-serif
+  -webkit-appearance none
+  border-radius 0
+
+// 1. Prevent iOS text size adjust after orientation change, without disabling user zoom.
+// 2. Remove highlite on mobile devices.
+html,body
+  height 100%
+  font-size 1.6rem
+  font-weight 400
+  font-family Arial, Helvetica, sans-serif
+  -ms-text-size-adjust 100%                       // 1
+  -webkit-text-size-adjust 100%                   // 1
+  -moz-osx-font-smoothing grayscale
+  -webkit-font-smoothing antialiased
+  -webkit-overflow-scrolling touch
+  -webkit-tap-highlight-color rgba(0,0,0,0)	  	  // 2
+  -webkit-focus-ring-color rgba(255,255,255,0)	  // 2
+
+html
+  font-size 62.5%
+
+@media only screen and (max-width 320px)
+  body
+    width 320px

@@ -1,0 +1,18 @@
+.b-order-money
+  text-align right
+
+  &__total
+  &__available
+    display inline
+
+  &__available
+    &:after
+      content ' /'
+
+  &__total
+    &._not-enough
+      color red
+
+  &__note
+    display block
+    font-size $h6-font-size

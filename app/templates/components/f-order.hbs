@@ -1,0 +1,29 @@
+<form class="f-default f-order">
+
+  <h2 class="f-default__title">Добавить заказ</h2>
+
+  <div class="f-default__wrapper">
+
+    {{b-selectize content=vendors
+                  optionValuePath='content.id'
+                  optionLabelPath='content.title'
+                  optionComponent='pr-vendor-option'
+                  selectItem=(action 'setVendor')
+                  valuePath='vendor'
+                  model=this
+                  placeholder='Выберите заведение'}}
+
+    {{#if vendor}}
+      <div class="f-default__row">
+        <a class="f-order__vendor-link" href="{{vendor.url}}">{{vendor.url}}</a>
+        <div class="f-order__vendor-min-cost">Минимальная сумма заказа {{vendor.minOrderCost}}</div>
+      </div>
+    {{/if}}
+
+    {{b-input model=this placeholder='Место доставки' valuePath='location'}}
+    {{b-input model=this placeholder='Время' valuePath='time'}}
+
+  </div>
+
+  <button {{action "submit"}} type="submit" class="button _submit">Создать</button>
+</form>

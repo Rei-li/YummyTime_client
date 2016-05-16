@@ -1,0 +1,15 @@
+<form class="f-default f-portion">
+
+  <h2 class="f-default__title">Добавить к заказу</h2>
+
+  <div class="f-portion__row b-order">
+    {{b-order-description order=order}}
+  </div>
+
+  <div class="f-default__wrapper">
+    {{b-textarea model=this valuePath='text' rows='4' placeholder='Заказ'}}
+    {{b-input model=this type='tel' valuePath='cost' placeholder="Сумма"}}
+  </div>
+
+  <button {{action "submit"}} class="button _submit">Добавить</button>
+</form>

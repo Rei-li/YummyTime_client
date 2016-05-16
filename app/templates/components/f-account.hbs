@@ -1,0 +1,12 @@
+<form class="f-default f-account">
+
+  <h2 class="f-default__title">Настройки аккаунта</h2>
+
+  <div class="f-default__wrapper">
+    {{b-input model=this valuePath='account.name' placeholder="Name"}}
+    {{b-input model=this type='email' valuePath='account.email' placeholder="Email"}}
+    {{b-input model=this type='tel' valuePath='account.phone' placeholder="Phone"}}
+  </div>
+
+  <button {{action "submit"}} class="button _submit">Сохранить настройки</button>
+</form>

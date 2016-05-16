@@ -1,0 +1,5 @@
+{{f-login submit=(action 'authenticate')
+          authenticateVia=(action 'authenticateVia')}}
+{{#if errorMessage}}
+  <p>{{errorMessage}}</p>
+{{/if}}

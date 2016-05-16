@@ -1,0 +1,27 @@
+.tabs-list
+  display flex
+  flex-wrap nowrap
+  margin 0 auto 20px
+  box-shadow 1px 1px 5px 0 rgba($bs-dark,.5)
+
+  &__item
+    flex-grow 1
+
+  &__link
+    line-height 4rem
+    background grey
+    font-weight 700
+    font-size $h5-font-size
+    text-transform uppercase;
+    text-decoration none
+    text-align center
+    color $c-light
+    display block
+    width 100%
+    transition background-color .2s ease-out
+
+    &._active
+      background $bg-action
+
+    &:hover
+      background-color $bg-primary

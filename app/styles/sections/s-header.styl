@@ -1,0 +1,40 @@
+.s-header
+  display none
+  justify-content space-between
+  background rgba($bg-primary,.95)
+  padding 5px 0
+  position fixed
+  min-height 50px
+  top 0
+  left 0
+  width 100%
+  z-index 3
+  transition transform 0.3s linear;
+
+  ._open &
+    transform translateX(80px);
+
+  &:before
+    position absolute
+    content ''
+    left 0
+    height 1px
+    width 100%
+    background linear-gradient(to bottom, rgba($bg-dark,.2), rgba(#fff,.0))
+    top 100%
+
+  &__title
+    line-height 50px
+    position absolute
+    top 0
+    bottom 0
+    left 0
+    right 0
+    text-align center
+    font-size $h5-font-size
+    color $c-dark
+
+
+@media $max767
+  .s-header
+    display flex

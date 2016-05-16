@@ -1,0 +1,60 @@
+.checkbox
+  cursor pointer
+
+  &__control
+    z-index -1
+    opacity 0
+
+  &__text
+    font-size $h5-font-size
+    position relative
+    display inline-block
+    width 20px
+    height 20px
+    background rgba(0,0,0,.2)
+    border-radius 3px
+
+    &:before
+      position absolute
+      top 1px
+      right 1px
+      left 1px
+      bottom 1px
+      margin auto 0
+      border-radius 2px
+      background #fff
+      content ''
+
+    &:hover
+      background rgba(0,0,0,.3)
+
+  &._checked
+    .checkbox__text:after
+      position absolute
+      top 0
+      right 0
+      bottom 0
+      left 0
+      width 20px
+      height 20px
+      line-height 20px
+      margin auto 0
+      color $bg-dark
+      content '\2713'
+      text-align center
+
+    .checkbox__text:before
+      background lighten($bg-action, 35)
+
+    &:focus + .checkbox__text:before
+      box-shadow 0 0 0 1px $bg-action,
+                 inset 0 0 0 1px $bg-action
+
+  &._disabled
+    pointer-events none
+    cursor not-allowed
+    opacity .5
+    color $gr9
+
+    .checkbox__text:before
+      background rgba(0,0,0,.08)

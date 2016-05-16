@@ -1,0 +1,11 @@
+<label class="f-default__label {{if showMessage '_error'}}">
+  {{input type=type
+          value=value
+          name=valuePath
+          class="f-default__field"
+          placeholder=placeholder
+          focusOut=(action 'validateField')}}
+</label>
+{{#if showMessage}}
+  <span class="f-default__error">{{v-get model valuePath 'message'}}</span>
+{{/if}}

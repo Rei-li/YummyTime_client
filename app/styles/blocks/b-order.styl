@@ -1,0 +1,83 @@
+.b-order
+  color $c-light
+  margin 0 auto
+
+  &__description
+    margin-bottom 20px
+
+    @media $max767
+      margin-bottom 10px
+
+  &__content
+    margin-bottom 20px
+    overflow-y auto
+    max-height calc(100vh - 280px)
+
+    @media $max767
+      max-height calc(100vh - 215px)
+      margin-bottom 10px
+
+    @media $min768
+      &::-webkit-scrollbar
+        width 6px
+      &::-webkit-scrollbar-track
+        border-radius 0
+      &::-webkit-scrollbar-thumb
+        border-radius 0
+        background $bg-primary
+      &::-webkit-scrollbar-thumb:window-inactive
+        background $bg-primary
+
+    @media $max767portrait
+      max-height calc(100vh - 265px)
+
+  &__title
+    font-size $h1-font-size
+    text-align center
+    margin-bottom 20px
+
+    @media $max767
+      font-size $h2-font-size
+      margin-bottom 10px
+
+  &__place
+  &__time
+    font-size $h2-font-size
+
+    @media $max767
+      font-size $h3-font-size
+
+  &__manager
+  &__money
+    font-size: $h4-font-size
+
+  &__row
+    display flex
+    justify-content space-between
+
+    &:not(:first-child)
+      margin-top: 5px
+
+  &__actions
+    display flex
+    justify-content space-between
+    align-items center
+
+    .button
+      width 50%
+      min-width 0
+      line-height 1.2
+      padding 10px
+
+      @media $max767
+        padding 5px 10px
+        font-size 1.4rem
+
+      @media $max360
+        padding 5px
+
+      &:not(:first-child)
+        margin-left: 30px
+
+        @media $max360
+          margin-left: 12px

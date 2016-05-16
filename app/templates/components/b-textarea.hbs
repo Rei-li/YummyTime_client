@@ -1,0 +1,11 @@
+<label class="f-default__label {{if showMessage '_error'}}">
+  {{textarea  value=value
+              name=valuePath
+              class="f-default__textarea"
+              rows=rows
+              placeholder=placeholder
+              focusOut=(action 'validateField')}}
+</label>
+{{#if showMessage}}
+  <span class="f-default__error">{{v-get model valuePath 'message'}}</span>
+{{/if}}

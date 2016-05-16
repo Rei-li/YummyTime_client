@@ -1,0 +1,71 @@
+.f-default
+  color $c-light
+  margin 0 auto 20px
+
+  &__wrapper
+    border-radius 3px
+    background $bg-light
+    padding 10px (10px + $err-height)
+    margin-bottom 10px
+
+  &__row
+    position relative
+    padding-bottom $err-height
+
+  &__title
+    font-size $h1-font-size
+    text-align center
+    margin-bottom 20px
+
+  &__label
+    font-weight 700
+    color $c-dark
+    font-size $h5-font-size
+    display block
+    &._error
+      .f-default__field
+      .f-default__textarea
+        border-bottom 1px solid $err-line
+
+  &__error
+    float left
+    font-size 0.9 * $err-height
+    color $err-msg
+    padding-top 0.1 * $err-height
+
+  &__field
+    display block
+    width 100%
+    border none
+    padding 0 10px
+    height 3.6rem
+    font-size $h5-font-size
+    color $c-dark
+    background transparent
+    border-bottom 1px solid rgba($bg-dark,.33)
+
+    &:focus
+      outline none
+      border-bottom-color $bg-primary
+
+    &::placeholder
+      font-size $h5-font-size
+      color rgba($c-dark,.33)
+
+  &__textarea
+    display block
+    width 100%
+    border none
+    padding 5px 10px
+    resize none
+    font-size $h5-font-size
+    border-bottom 1px solid rgba($bg-dark,.33)
+
+    &:focus
+      outline none
+      border-bottom-color $bg-primary
+
+    &::placeholder
+      font-size $h5-font-size
+      color rgba($c-dark,.33)
+

@@ -1,0 +1,57 @@
+.m-site
+  &__link
+    font-size $h6-font-size
+    text-align center
+    text-decoration none
+    display block
+    padding 20px 10px
+    color rgba($c-dark,.8)
+    button&
+      width: 100%
+
+    svg
+      transition fill .2s ease-out
+    &:hover
+      svg
+       fill $bg-primary
+
+  &__item
+    &._desktop-item
+      display none
+
+    &:not(:first-child)
+      position relative
+
+      &:before
+        margin 0 auto
+        position absolute
+        left 0
+        right 0
+        width calc(100% - 10px)
+        height 1px
+        background $grD
+        top 0
+        content ''
+
+@media $min768
+  .m-site
+
+    &__item
+      &._desktop-item
+        display block
+
+    &__link
+      font-size $h5-font-size
+      display flex
+      justify-content flex-start;
+      padding-left 18px;
+      align-items center
+
+      svg
+        width 25px
+        margin 0 10px 0 0
+
+      .svg-settings
+      .svg-vendors
+        margin-left -1px
+        margin-right 11px

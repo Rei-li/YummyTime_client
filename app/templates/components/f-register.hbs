@@ -1,0 +1,12 @@
+<form class="f-default f-register">
+  <h2 class="f-default__title">Регистрация</h2>
+
+  <div class="f-default__wrapper">
+    {{b-input model=this valuePath='name' placeholder="Name"}}
+    {{b-input model=this type='email' valuePath='email' placeholder="E-mail"}}
+    {{b-input model=this type='password' valuePath='password' placeholder="Password"}}
+    {{b-input model=this type='tel' valuePath='phone' placeholder="Phone"}}
+  </div>
+
+  <button {{action "submit"}} type="submit" class="button _submit">Отправить</button>
+</form>

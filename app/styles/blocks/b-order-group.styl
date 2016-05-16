@@ -1,0 +1,88 @@
+.b-order-group
+  &:not(:first-child)
+    margin-top: 10px
+
+  &__wrapper
+    cursor pointer
+    padding 10px
+    box-shadow 1px 1px 5px 0 rgba($bs-dark,.5)
+    background $bg-light
+    transition box-shadow .2s ease-out
+
+    &:hover
+      box-shadow 1px 1px 8px 0 rgba($bs-dark,.5)
+
+  &__person
+    color $c-dark
+    font-size $h3-font-size
+    margin-right auto
+
+  &__summary
+    padding 15px 15px 15px 10px
+    background $bg-light
+    position relative
+    display none
+
+    &:before
+      content ''
+      display block
+      position absolute
+      height 1px
+      left 0
+      right 0
+      top 0
+      margin 0 auto
+      width calc(100% - 20px)
+      background $grD
+
+  &__row
+    display flex
+    align-items center
+
+    &:not(:first-child)
+      margin-top 5px
+
+  &__checkbox
+    width 30px
+    height 30px
+    position relative
+
+    .checkbox__text
+      position absolute
+      left 0
+      top 0
+      right 0
+      bottom 0
+      margin auto
+
+  &__remove-btn
+    width 32px
+    height 32px
+    position relative
+    padding 0
+    margin-right 8px
+
+    &:before
+      transform rotate(45deg)
+    &:after
+      transform rotate(-45deg)
+    &:before
+    &:after
+      position absolute
+      content ''
+      display block
+      left 0
+      top 0
+      bottom 0
+      right 0
+      width 18px
+      height 2px
+      background $orange
+      margin auto
+      transform-origin center
+
+    &._disabled
+      &:before
+      &:after
+        background $grD
+        cursor not-allowed

@@ -1,0 +1,13 @@
+<label class="f-default__label {{if showMessage '_error'}}">
+  {{ember-selectize content=content
+                    optionValuePath=optionValuePath
+                    optionLabelPath=optionLabelPath
+                    optionComponent=optionComponent
+                    select-item='selectItem'
+                    focus-out='validateField'
+                    placeholder=placeholder
+                    name=valuePath}}
+</label>
+{{#if showMessage}}
+  <span class="f-default__error">{{v-get model valuePath 'message'}}</span>
+{{/if}}
