@@ -4,8 +4,8 @@ export default Ember.Controller.extend({
   notifications: Ember.inject.service(),
 
   actions: {
-    send(message, order) {
-      this.get('notifications').sendOrderNotification(message, order.id);
+    send(data, order) {
+      this.get('notifications').sendOrderNotification(data.message, order.id);
     }
   }
 });
