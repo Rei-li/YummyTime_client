@@ -11,14 +11,19 @@
     "build": "./node_modules/.bin/ember build",
     "start": "node  ./node_modules/.bin/ember server --environment production --live-reload=false",
     "test": "./node_modules/.bin/ember test",
+    "eslint": "./node_modules/.bin/eslint .",
     "postinstall": "./node_modules/.bin/bower install"
   },
   "repository": "https://github.com/Rei-li/YummyTime_client/",
   "engines": {
     "node": ">= 0.10.0"
   },
-  "author": "team nom-nom",
+  "author": "Rei-li (team nom-nom)",
   "license": "MIT",
+  "bugs": {
+    "url": "http://geo.thebuggenie.com/yummytime/issues/find"
+  },
+  "homepage": "https://github.com/Rei-li/YummyTime_client#readme",
   "dependencies": {
     "broccoli-asset-rev": "^2.4.2",
     "ember-ajax": "0.7.1",
@@ -50,5 +55,12 @@
     "ember-simple-auth": "^1.1.0-beta.4",
     "ember-simple-auth-token": "^1.1.1",
     "selectize": "^0.12.1"
+  },
+  "devDependencies": {
+    "babel-eslint": "^6.0.2",
+    "eslint": "^2.8.0",
+    "eslint-config-airbnb": "^7.0.0",
+    "git-hooks": "^1.0.2",
+    "jscs": "^3.0.2"
   }
 }

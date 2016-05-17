@@ -6,7 +6,7 @@ export default Ember.Service.extend({
   session: Ember.inject.service(),
 
   getSocket() {
-    return this.get('socketService').socketFor(ENV.host);;
+    return this.get('socketService').socketFor(ENV.host);
   },
 
   setNotificationCookie(orderId) {
