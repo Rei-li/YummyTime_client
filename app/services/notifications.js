@@ -9,7 +9,7 @@ export default Ember.Service.extend({
     const io = this.get('socketService').socketFor(ENV.host);
     io.set('transports', ['xhr-polling']);
     io.set('polling duration', 10);
-    return
+    return io;
   },
 
   setNotificationCookie(orderId) {
