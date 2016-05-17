@@ -6,10 +6,7 @@ export default Ember.Service.extend({
   session: Ember.inject.service(),
 
   getSocket() {
-    const io = this.get('socketService').socketFor(ENV.host);
-    io.set('transports', ['xhr-polling']);
-    io.set('polling duration', 10);
-    return io;
+    return this.get('socketService').socketFor(ENV.host);;
   },
 
   setNotificationCookie(orderId) {
