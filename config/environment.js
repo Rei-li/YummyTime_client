@@ -67,7 +67,7 @@ module.exports = function(environment) {
 
   if (environment === 'production') {
     // ENV.host = 'https://my-yummytime-server.herokuapp.com';
-    ENV.host = 'http://yummytimeserver.azurewebsites.net/';
+    ENV.host = 'http://yummytimeserver.azurewebsites.net';
     ENV.namespace = '';
     ENV['ember-simple-auth-token'].serverTokenEndpoint = `${ENV.host}/auth/token`;
     ENV.torii.providers['google-oauth2'].redirectUri = ENV.host;
