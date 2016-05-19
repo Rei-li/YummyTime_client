@@ -22,6 +22,8 @@ Router.map(function() {
   this.route('checkout', { path: '/orders/:order_id/checkout' });
   // eslint-disable-next-line prefer-arrow-callback
   this.route('account', function() {});
+  this.route('new-company', { path: '/companies/new' });
+  this.route('companies', { path: '/companies' });
 });
 
 export default Router;

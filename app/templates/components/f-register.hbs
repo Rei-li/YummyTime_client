@@ -2,6 +2,14 @@
   <h2 class="f-default__title">Регистрация</h2>
 
   <div class="f-default__wrapper">
+    {{b-selectize content=companies
+                  optionValuePath='content.id'
+                  optionLabelPath='content.title'
+                  optionComponent='pr-company-option'
+                  selectItem=(action 'setCompany')
+                  valuePath='company'
+                  model=this
+                  placeholder='Выберите компанию'}}
     {{b-input model=this valuePath='name' placeholder="Name"}}
     {{b-input model=this type='email' valuePath='email' placeholder="E-mail"}}
     {{b-input model=this type='password' valuePath='password' placeholder="Password"}}

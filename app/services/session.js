@@ -19,5 +19,11 @@ export default ESASession.extend({
     } else {
       this.set('account', null);
     }
-  })
+  }),
+
+  getCurrentAccountId() {
+    const jwt = Ember.getOwner(this).lookup('authenticator:jwt');
+    const payload = jwt.getTokenData(this.get('session.authenticated.token'));
+    return payload;
+  }
 });

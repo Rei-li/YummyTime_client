@@ -2,22 +2,10 @@ import Ember from 'ember';
 import { validator, buildValidations } from 'ember-cp-validations';
 
 const Validations = buildValidations({
-  name: {
-    validators: [validator('presence', true)]
-  },
-  email: {
+  title: {
     validators: [
-      validator('presence', true),
-      validator('format', {
-        type: 'email'
-      })
+      validator('presence', true)
     ]
-  },
-  password: {
-    validators: [validator('presence', true)]
-  },
-  company: {
-    validators: [validator('presence', true)]
   }
 });
 
@@ -25,15 +13,11 @@ export default Ember.Component.extend(Validations, {
   didValidate: false,
 
   actions: {
-    setCompany(company) {
-      this.set('company', company);
-    },
-
     submit() {
       this.validate().then(({ validations }) => {
         if (validations.get('isValid')) {
           this.attrs.submit(
-            this.getProperties('email', 'name', 'password', 'phone')
+            this.getProperties('title', 'address', 'description')
           );
         }
         this.set('didValidate', true);
