@@ -13,7 +13,7 @@ Router.map(function() {
     this.route('inactive');
   });
   this.route('order', { path: '/orders/:order_id' });
-  this.route('new-order', { path: '/orders/new' });
+  this.route('new-order', { path: 'companies/:id/orders/new' });
   this.route('new-portion-order', { path: '/orders/:order_id/portions/new' });
   this.route('register');
   this.route('login');
@@ -24,6 +24,8 @@ Router.map(function() {
   this.route('account', function() {});
   this.route('new-company', { path: '/companies/new' });
   this.route('companies', { path: '/companies' });
+  this.route('company-orders', { path: 'companies/:id/orders' });
+  this.route('home');
 });
 
 export default Router;

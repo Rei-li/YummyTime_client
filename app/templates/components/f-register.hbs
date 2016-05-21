@@ -10,6 +10,7 @@
                   valuePath='company'
                   model=this
                   placeholder='Выберите компанию'}}
+                  {{#link-to 'new-company' }} Зарегистрировать новую компанию{{/link-to}}
     {{b-input model=this valuePath='name' placeholder="Name"}}
     {{b-input model=this type='email' valuePath='email' placeholder="E-mail"}}
     {{b-input model=this type='password' valuePath='password' placeholder="Password"}}

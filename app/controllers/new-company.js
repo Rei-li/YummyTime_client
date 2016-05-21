@@ -5,7 +5,7 @@ export default Ember.Controller.extend({
     createCompany(attrs) {
       const company = this.store.createRecord('company', attrs);
       company.save();
-      this.transitionToRoute('companies');
+      this.transitionToRoute('register');
     }
   }
 });
