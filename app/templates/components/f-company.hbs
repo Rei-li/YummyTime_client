@@ -1,0 +1,13 @@
+<form class="f-default f-company">
+
+  <h2 class="f-default__title">Новая компания</h2>
+
+
+  <div class="f-default__wrapper">
+    {{b-input model=this placeholder='Название' valuePath='title' }}
+    {{b-input model=this placeholder='Адрес' valuePath='address' }}
+    {{b-textarea model=this placeholder='Описание' valuePath='description' }}
+  </div>
+
+  <button {{action "submit"}} type="submit" class="button _submit">Добавить</button>
+</form>

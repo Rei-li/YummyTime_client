@@ -22,7 +22,7 @@ export default Ember.Controller.extend({
         })
         .then(() => {
           this.set('errorMessage', null);
-          this.transitionToRoute('orders');
+          this.transitionToRoute('home');
         })
         .catch((reason) => {
           this.set('errorMessage', reason.message || reason);

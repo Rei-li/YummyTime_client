@@ -6,6 +6,7 @@ export default DS.Model.extend({
   email: DS.attr('string'),
   password: DS.attr('string'),
   phone: DS.attr('string'),
+  company: DS.belongsTo('company'),
 
   /**
    * Public name of the account

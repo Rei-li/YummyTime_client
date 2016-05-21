@@ -2,9 +2,9 @@ import Ember from 'ember';
 import AuthenticatedRouteMixin from 'ember-simple-auth/mixins/authenticated-route-mixin';
 
 export default Ember.Route.extend(AuthenticatedRouteMixin, {
-  model() {
+  model(params) {
     return this.store.query('order', {
-      filter: { simple: { active: false } }
+      filter: { simple: { active: false, company: params.id } }
     });
   },
 

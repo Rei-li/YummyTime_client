@@ -1,0 +1,15 @@
+<ul class="b-companies">
+  {{#each model as |company|}}
+    <li class="b-companies__item">
+      <div class="b-companies__info">
+        <span class="b-companies__title">{{company.title}}</span>
+      </div>
+      <div>
+        <span class="b-companies__address">Адрес: {{company.address}}</span>
+      </div>
+      <span class="b-companies__description">Описание: {{company.description}}</span>
+      </li>
+  {{/each}}
+</ul>
+
+{{#link-to "new-company" aria-label="add new company" class="btn-new-company"}}{{/link-to}}
