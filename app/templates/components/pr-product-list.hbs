@@ -1,0 +1,7 @@
+{{#each model.products as |product|}}
+  {{!-- {{#if (eq product.vendor.id model.order.vendor.id) }} --}}
+    <li class="order-list__item">
+      {{pr-product product=product}}
+    </li>
+  {{!-- {{/if}} --}}
+{{/each}}

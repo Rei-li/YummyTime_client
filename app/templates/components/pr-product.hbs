@@ -1,0 +1,20 @@
+  <div class="pr-order__row">
+    <div class="pr-order__place">{{product.title}}
+    <div class="b-person__name">
+        {{product.vendor.title}}
+      </div>
+    </div>
+    <time class="pr-order__time">{{product.price}}</time>
+  </div>
+  <div class="pr-order__row">
+    <div class="pr-order__manager b-person">
+      <div class="b-person__name">
+        {{product.description}}
+      </div>
+    </div>
+
+   <div class="pr-order__money b-order-money">
+       <button {{action "submit"}} class="button _submit">+</button>
+    </div>
+
+  </div>
