@@ -7,7 +7,7 @@ export default DS.Model.extend({
   manager: DS.belongsTo('account'),
   company: DS.belongsTo('company'),
   time: DS.attr('string'),
-  money: DS.attr({ defaultValue: () => ({}) }),
+  sum: DS.attr('number'),
   portions: DS.hasMany('portion'),
   active: DS.attr('boolean', { defaultValue: true }),
 
@@ -16,23 +16,17 @@ export default DS.Model.extend({
   }),
 
   addPortion(portion) {
-    const total = this.get('money.total');
-    const cost = portion.get('cost');
-
-    this.set('money.total', total + cost);
     this.get('portions').pushObject(portion);
   },
 
+  updateSum(portionCost) {
+    const total = this.get('sum');
+    this.set('sum', total + portionCost);
+    return this.save();
+  },
+
   removePortion(portion) {
-    const available = this.get('money.available');
-    const total = this.get('money.total');
-    const cost = portion.get('cost');
-
-    this.set('money.total', total - cost);
-    if (portion.get('paid')) {
-      this.set('money.available', available - cost);
-    }
-
     this.get('portions').removeObject(portion);
+    return this.save();
   }
 });

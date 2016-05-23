@@ -1,14 +1,21 @@
 <div class="b-portion__row">
 
   {{#if canDelete}}
-    <button class="b-portion__remove-btn" {{action 'remove' portion}}></button>
+    <button class="b-portion__remove-btn" {{action 'del'}}></button>
   {{else}}
     <button class="b-portion__remove-btn _disabled"></button>
   {{/if}}
+      <div class="b-order-group__person b-person">
+      <span class="b-person__name">{{portion.owner.displayName}}</span>
+      <span class="b-person__phone">{{portion.owner.phone}}</span>
+    </div>
+
+
+
   <div class="b-portion__text">
     {{portion.text}}
   </div>
   <div class="b-portion__cost">{{portion.cost}}</div>
-  {{b-checkbox checked=portion.paid disabled=isManager
-               onchange=(action 'togglePaid' portion)}}
+  {{!-- {{b-checkbox checked=portion.paid disabled=isManager
+               onchange=(action 'togglePaid' portion)}} --}}
 </div>

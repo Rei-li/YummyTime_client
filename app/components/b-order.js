@@ -12,6 +12,12 @@ export default Ember.Component.extend({
       const order = this.get('order');
       order.toggleProperty('active');
       order.save();
+    },
+
+    add() {
+      this.attrs.add(
+        this.get('order')
+      );
     }
   }
 });

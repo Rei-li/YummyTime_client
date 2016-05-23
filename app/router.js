@@ -26,6 +26,7 @@ Router.map(function() {
   this.route('companies', { path: '/companies' });
   this.route('company-orders', { path: 'companies/:id/orders' });
   this.route('home');
+  this.route('portion', { path: 'portions/:portion_id' });
 });
 
 export default Router;
