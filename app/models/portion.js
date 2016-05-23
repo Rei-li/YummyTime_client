@@ -9,14 +9,54 @@ export default DS.Model.extend({
   order: DS.belongsTo('order'),
   'portion-products': DS.hasMany('portion-product'),
 
-  updateOrderMoney() {
-    this.get('order').then((order) => {
-      const cost = this.get('cost');
-      const paid = this.get('paid');
-      const available = order.get('money.available');
+  // updateOrderMoney() {
+  //   this.get('order').then((order) => {
+  //     const cost = this.get('cost');
+  //     const paid = this.get('paid');
+  //     const available = order.get('sum');
 
-      order.set('money.available', available + ((paid) ? +cost : -cost));
-      order.save();
+  //     order.set('sum', available + ((paid) ? +cost : -cost));
+  //     order.save();
+  //   });
+  // },
+
+  updateCost(productPrice) {
+    const portion = this;
+    return new Promise((resolve, reject) => {
+      const cost = portion.get('cost');
+      portion.set('cost', productPrice + cost);
+      portion.get('order').content.updateSum(productPrice).then(() => {
+        console.log('cost updated', portion.id);
+        resolve();
+      });
+    });
+  },
+
+  updateComment(text) {
+    this.set('text', text);
+    return this.save();
+  },
+
+  removeProducts(portionProduct) {
+    const portion = this;
+    return new Promise((resolve, reject) => {
+      const productCost = portionProduct.get('product.price');
+      portion.get('portion-products').removeObject(portionProduct);
+      portion.updateCost(productCost * (-1)).then(() => {
+        portion.save().then(() => {
+          console.log('product removed', portion.id);
+          resolve();
+        });
+      });
+    });
+  },
+
+  lazyRemoveProducts(portionProduct) {
+    const portion = this;
+    return new Promise((resolve, reject) => {
+      portion.get('portion-products').removeObject(portionProduct);
+      console.log('product removed lazy', portion.id);
+      resolve();
     });
   },
 

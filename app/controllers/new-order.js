@@ -7,7 +7,7 @@ export default Ember.Controller.extend({
       order.set('vendor', vendor);
       order.set('manager', account);
       order.set('company', company);
-      order.set('money.required', vendor.get('minOrderCost'));
+      order.set('sum', 0);
       order.save();
       this.transitionToRoute('company-orders', company.content.id);
     }

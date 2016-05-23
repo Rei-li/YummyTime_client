@@ -1,0 +1,19 @@
+{{f-portion order=model.portion.order submit=(action 'addToOrder' model.portion)}}
+
+ {{b-portion portion=model.portion del=(action 'removePortion' model)}}
+ {{#each model.portion.portion-products as |portion-product|}}
+
+    <li class="order-list__item">
+      {{pr-portion-product portion-product=portion-product remove=(action 'removePortionProduct' model.portion) }}
+    </li>
+
+{{/each}}
+
+{{#each model.products as |product|}}
+  {{#if (eq product.vendor.id model.portion.order.vendor.id) }}
+    <li class="order-list__item">
+      {{pr-product product=product submit=(action 'addToPortion' model)}}
+    </li>
+  {{/if}}
+{{/each}}
+

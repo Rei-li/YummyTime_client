@@ -6,16 +6,21 @@ const Validations = buildValidations({
 
 export default Ember.Component.extend(Validations, {
   actions: {
-    submit() {
+    remove() {
       this.validate().then(({ validations }) => {
         if (validations.get('isValid')) {
-          this.attrs.submit(
-            this.get('product.price'),
-            this.get('product'),
+          this.attrs.remove(
+            this.get('portion-product'),
           );
         }
         this.set('didValidate', true);
       });
+    },
+
+    togglePaid(portion) {
+      // portion.toggleProperty('paid');
+      // portion.updateOrderMoney();
+      // portion.save();
     }
   }
 });
