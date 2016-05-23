@@ -46,6 +46,7 @@
     "ember-load-initializers": "^0.5.1",
     "ember-resolver": "^2.0.3",
     "ember-cli-inject-live-reload": "^1.4.0",
+    "ember-truth-helpers": "1.2.0",
     "phantomjs-prebuilt": "^2.1.7",
     "loader.js": "^4.0.1",
     "torii": "^0.8.0",
@@ -60,8 +61,5 @@
     "eslint-config-airbnb": "^7.0.0",
     "git-hooks": "^1.0.2",
     "jscs": "^3.0.2"
-  },
-  "devDependencies": {
-    "ember-truth-helpers": "1.2.0"
   }
 }
