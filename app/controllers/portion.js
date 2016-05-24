@@ -25,7 +25,8 @@ export default Ember.Controller.extend({
 
       portionProducts.toArray().forEach(product => {
         const productAddResult = portion.lazyRemoveProducts(product).then(() => {
-          product.destroyRecord();
+          product.set('deleted', true);
+          product.save();
         });
         productRemovePromises.push(productAddResult);
       });
@@ -36,7 +37,8 @@ export default Ember.Controller.extend({
           const order = portion.get('order');
           order.content.updateSum(portionCost * (-1)).then(() => {
             order.content.removePortion(portion).then(() => {
-              portion.destroyRecord();
+              portion.set('deleted', true);
+              portion.save();
               context.transitionToRoute('order', order.content.id);
             });
           });
@@ -58,9 +60,10 @@ export default Ember.Controller.extend({
 
 
     removePortionProduct(model, attrs) {
-      return new Promise((resolve, reject) => {
+      return new Promise((resolve) => {
         model.removeProducts(attrs).then(() => {
-          attrs.destroyRecord();
+          attrs.set('deleted', true);
+          attrs.save();
           resolve();
         });
       });

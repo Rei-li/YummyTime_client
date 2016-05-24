@@ -10,6 +10,7 @@ export default DS.Model.extend({
   sum: DS.attr('number'),
   portions: DS.hasMany('portion'),
   active: DS.attr('boolean', { defaultValue: true }),
+  deleted: DS.attr('boolean'),
 
   isReady: Ember.computed('money.total', 'money.required', function() {
     return this.get('money.total') >= this.get('money.required');
