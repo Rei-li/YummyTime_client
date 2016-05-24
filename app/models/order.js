@@ -7,10 +7,20 @@ export default DS.Model.extend({
   manager: DS.belongsTo('account'),
   company: DS.belongsTo('company'),
   time: DS.attr('string'),
-  sum: DS.attr('number'),
   portions: DS.hasMany('portion'),
   active: DS.attr('boolean', { defaultValue: true }),
   deleted: DS.attr('boolean'),
+
+  sum: Ember.computed('portions', function() {
+    // this.reload();
+    const portions = this.get('portions');
+    let orderSum = 0;
+    portions.reload();
+    portions.toArray().forEach(portion => {
+      orderSum += portion.get('cost');
+    });
+    return orderSum;
+  }),
 
   isReady: Ember.computed('money.total', 'money.required', function() {
     return this.get('money.total') >= this.get('money.required');

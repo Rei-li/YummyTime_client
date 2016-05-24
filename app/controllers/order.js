@@ -14,15 +14,16 @@ export default Ember.Controller.extend({
         cost: 0,
         owner: account,
         order: model.order,
-        'portion-products': []
+        'portion-products': [],
+        deleted: true
       });
       if (isManager) {
         portion.set('paid', true);
       }
       portion.save().then(() => {
-        model.order.addPortion(portion);
-        model.order.save();
-        context.get('notifications').subscribeOrderNotification(model.order.id);
+        // model.order.addPortion(portion);
+        // model.order.save();
+        // context.get('notifications').subscribeOrderNotification(model.order.id);
         context.transitionToRoute('portion', portion.id);
       });
     }
