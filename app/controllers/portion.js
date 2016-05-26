@@ -9,8 +9,20 @@ export default Ember.Controller.extend({
     addToOrder(model, attrs) {
       const context = this;
       model.updateComment(attrs.text).then(() => {
+        const portionProducts = model.get('portion-products');
+        portionProducts.toArray().forEach(product => {
+          product.set('deleted', false);
+          product.save();
+        });
+
         const order = model.get('order').content;
+        // order.addPortion(model);
+        // order.save();
+        // order.updateSum(model.get('cost')).then(() => {
+        // context.get('notifications').subscribeOrderNotification(model.order.id);
+
         context.transitionToRoute('order', order.id);
+        // });
       });
     },
 
@@ -18,7 +30,7 @@ export default Ember.Controller.extend({
       const context = this;
       const portion = model.portion;
       const portionProducts = portion.get('portion-products');
-      const portionCost = portion.get('cost');
+      // const portionCost = portion.get('cost');
 
 
       const productRemovePromises = [];
@@ -35,13 +47,13 @@ export default Ember.Controller.extend({
         .then(() => {
           portion.save();
           const order = portion.get('order');
-          order.content.updateSum(portionCost * (-1)).then(() => {
-            order.content.removePortion(portion).then(() => {
-              portion.set('deleted', true);
-              portion.save();
-              context.transitionToRoute('order', order.content.id);
-            });
+          // order.content.updateSum(portionCost * (-1)).then(() => {
+          order.content.removePortion(portion).then(() => {
+            portion.set('deleted', true);
+            portion.save();
+            context.transitionToRoute('order', order.content.id);
           });
+          // });
         });
     },
 

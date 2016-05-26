@@ -25,14 +25,16 @@ export default DS.Model.extend({
     return new Promise((resolve) => {
       const cost = portion.get('cost');
       portion.set('cost', productPrice + cost);
-      portion.get('order').content.updateSum(productPrice).then(() => {
-        resolve();
-      });
+      resolve();
+      // portion.get('order').content.updateSum(productPrice).then(() => {
+      //   resolve();
+      // });
     });
   },
 
   updateComment(text) {
     this.set('text', text);
+    this.set('deleted', false);
     return this.save();
   },
 
