@@ -27,7 +27,13 @@ export default DS.Model.extend({
   }),
 
   addPortion(portion) {
+    // let portions = this.get('portions');
+    // var p1 = portions.toArray();
+    // portions.reload();
+    // var p2 = portions.toArray();
+    // portions.pushObject(portion);
     this.get('portions').pushObject(portion);
+    return this.save();
   },
 
   updateSum(portionCost) {

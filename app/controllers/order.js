@@ -9,22 +9,26 @@ export default Ember.Controller.extend({
       const context = this;
       const account = context.get('session.account');
       const isManager = (context.get('session.account.id') === model.order.get('manager.id'));
-      const portion = context.store.createRecord('portion', {
-        text: 'text',
-        cost: 0,
-        owner: account,
-        order: model.order,
-        'portion-products': [],
-        deleted: true
-      });
-      if (isManager) {
-        portion.set('paid', true);
-      }
-      portion.save().then(() => {
-        // model.order.addPortion(portion);
-        // model.order.save();
-        // context.get('notifications').subscribeOrderNotification(model.order.id);
-        context.transitionToRoute('portion', portion.id);
+      // const reloadedOrder = this.store.findRecord('order', model.order.id, { reload: true });
+
+      this.store.findRecord('order', model.order.id, { reload: true }).then(function(reloadedOrder) {
+        const portion = context.store.createRecord('portion', {
+          text: 'text',
+          cost: 0,
+          owner: account,
+          order: reloadedOrder,
+          'portion-products': [],
+          deleted: true
+        });
+        if (isManager) {
+          portion.set('paid', true);
+        }
+        portion.save().then(() => {
+          reloadedOrder.addPortion(portion).then(() => {
+            context.get('notifications').subscribeOrderNotification(model.order.id);
+            context.transitionToRoute('portion', portion.id);
+          });
+        });
       });
     }
   }

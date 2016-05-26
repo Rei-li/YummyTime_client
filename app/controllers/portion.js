@@ -16,10 +16,10 @@ export default Ember.Controller.extend({
         });
 
         const order = model.get('order').content;
-        order.addPortion(model);
-        order.save();
+        // order.addPortion(model);
+        // order.save();
         // order.updateSum(model.get('cost')).then(() => {
-        context.get('notifications').subscribeOrderNotification(model.order.id);
+        // context.get('notifications').subscribeOrderNotification(model.order.id);
 
         context.transitionToRoute('order', order.id);
         // });
