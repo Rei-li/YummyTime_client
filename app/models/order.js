@@ -10,6 +10,8 @@ export default DS.Model.extend({
   portions: DS.hasMany('portion'),
   active: DS.attr('boolean', { defaultValue: true }),
   deleted: DS.attr('boolean'),
+  date: DS.attr('date'),
+  comment: DS.attr('string'),
 
   sum: Ember.computed('portions', function() {
     // this.reload();

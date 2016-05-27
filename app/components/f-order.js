@@ -30,7 +30,7 @@ export default Ember.Component.extend(Validations, {
             this.get('vendor'),
             this.get('session.account'),
             this.get('session.account.company'),
-            this.getProperties('location', 'time')
+            this.getProperties('location', 'time', 'comment')
           );
         }
         this.set('didValidate', true);

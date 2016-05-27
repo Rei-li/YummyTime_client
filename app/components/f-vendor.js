@@ -29,7 +29,7 @@ export default Ember.Component.extend(Validations, {
       this.validate().then(({ validations }) => {
         if (validations.get('isValid')) {
           this.attrs.submit(
-            this.getProperties('title', 'url', 'minOrderCost')
+            this.getProperties('title', 'url', 'minOrderCost', 'description')
           );
         }
         this.set('didValidate', true);

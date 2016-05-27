@@ -13,7 +13,7 @@ export default Ember.Controller.extend({
 
       this.store.findRecord('order', model.order.id, { reload: true }).then(function(reloadedOrder) {
         const portion = context.store.createRecord('portion', {
-          text: 'text',
+          text: ' ',
           cost: 0,
           owner: account,
           order: reloadedOrder,
