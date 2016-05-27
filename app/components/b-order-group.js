@@ -6,21 +6,20 @@ export default Ember.Component.extend({
   tagName: 'li',
   classNames: ['b-order-group'],
 
-  isManager: Ember.computed('session.account.id', function() {
-    const currentAccountId = this.get('session.account.id');
-    const orderManagerId = this.get('order.manager.id');
-    return (currentAccountId !== orderManagerId);
-  }),
-
   canDelete: Ember.computed('order.active', function() {
     const currentAccountId = this.get('session.account.id');
     const order = this.get('order');
 
     if (order.get('active')) {
       return (currentAccountId === this.get('order.manager.id')) ||
-             (currentAccountId === this.get('owner.id'));
+        (currentAccountId === this.get('owner.id'));
     }
     return false;
+  }),
+
+  isOwner: Ember.computed('session.account.id', function() {
+    const currentAccountId = this.get('session.account.id');
+    return (currentAccountId === this.get('portion.owner.id'));
   }),
 
   allPaid: Ember.computed('portions.@each.paid', function() {

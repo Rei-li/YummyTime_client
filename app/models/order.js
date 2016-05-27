@@ -22,9 +22,9 @@ export default DS.Model.extend({
     return orderSum;
   }),
 
-  isReady: Ember.computed('money.total', 'money.required', function() {
-    return this.get('money.total') >= this.get('money.required');
-  }),
+  // isReady: Ember.computed('money.total', 'money.required', function() {
+  //   return this.get('money.total') >= this.get('money.required');
+  // }),
 
   addPortion(portion) {
     // let portions = this.get('portions');

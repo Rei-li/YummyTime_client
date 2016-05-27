@@ -1,5 +1,5 @@
   <div class="pr-order__row">
-    <div class="pr-order__place">{{product.title}}
+    <div class="pr-order__place">{{product.title}} {{count}}
  {{!--    <div class="b-person__name">
         {{product.vendor.title}}
       </div> --}}
@@ -19,5 +19,6 @@
    <time class="pr-order__time">{{product.price}}</time>
        <button {{action "submit"}} class="button _submit">+</button>
     </div>
+
 
   </div>

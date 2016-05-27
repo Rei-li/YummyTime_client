@@ -11,5 +11,12 @@
       </li>
       {{#link-to 'company-orders' session.account.company.id}}link{{/link-to}}
 
+      {{admin-order-list model=model.orders}}
+
+          {{#each model.portions as |portion|}}
+      {{b-order-group order=portion.order portion=portion owner=group.grouper}}
+    {{/each}}
+
+
 
 </ul>

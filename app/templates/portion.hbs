@@ -1,10 +1,10 @@
-{{f-portion order=model.portion.order submit=(action 'addToOrder' model.portion)}}
+{{f-portion model=model submit=(action 'addToOrder' model.portion)}}
 
  {{b-portion portion=model.portion del=(action 'removePortion' model)}}
  {{#each model.portion.portion-products as |portion-product|}}
 
     <li class="order-list__item">
-      {{pr-portion-product portion-product=portion-product remove=(action 'removePortionProduct' model.portion) }}
+      {{f-portion-product portion-product=portion-product remove=(action 'removePortionProduct' model.portion) }}
     </li>
 
 {{/each}}

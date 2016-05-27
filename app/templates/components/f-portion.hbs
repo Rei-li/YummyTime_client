@@ -3,13 +3,14 @@
   <h2 class="f-default__title">Добавить к заказу</h2>
 
   <div class="f-portion__row b-order">
-    {{b-order-description order=order}}
+    {{b-order-description order=model.portion.order}}
   </div>
 
   <div class="f-default__wrapper">
-    {{b-textarea model=this valuePath='text' rows='4' placeholder='Заказ'}}
-    {{b-input model=this type='tel' valuePath='cost' placeholder="Сумма"}}
-  </div>
 
+
+    {{b-textarea model=this valuePath='text' rows='4' value='text' placeholder='Комментарий к заказу'}}
+
+  </div>
   <button {{action "submit"}} class="button _submit">Добавить</button>
 </form>

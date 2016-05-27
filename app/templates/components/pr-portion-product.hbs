@@ -1,15 +1,10 @@
   <div class="pr-order__row">
     <div class="pr-order__manager b-person">
     <div class="b-person__name">
-       {{portion-product.product.title}}
+       {{product.title}}
       </div>
     </div>
-    <time class="pr-order__time">{{portion-product.product.price}}</time>
+    <time class="pr-order__time">{{product.price}}</time>
   </div>
-  <div class="pr-order__row">
-   <div class="pr-order__money b-order-money">
-       <button {{action "remove" portion-product}} class="button _submit">-</button>
-    </div>
 
-  </div>
 

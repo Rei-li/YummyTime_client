@@ -11,11 +11,19 @@ export function groupBy(iter, byPath) {
       result.pushObject(Ember.Object.create({
         _id,
         list: new Ember.A(),
-        grouper: Ember.get(item, byPath.split('.', 1)[0])
+        grouper: Ember.get(item, byPath.split('.', 1)[0]),
+        counter: 0,
+        item: null
       }));
     }
 
-    result.findBy('_id', _id).get('list').pushObject(item);
+    const group = result.findBy('_id', _id);
+
+    group.get('list').pushObject(item);
+    group.counter++;
+    if (group.item === null) {
+      group.item = group.get('list')[0];
+    }
   });
 
   return result;
