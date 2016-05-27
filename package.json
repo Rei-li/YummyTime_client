@@ -53,6 +53,10 @@
     "ember-simple-auth-token": "^1.1.1",
     "ember-truth-helpers": "1.2.0",
     "ember-websockets": "3.0.0",
+    "ember-bootstrap-datetimepicker": "1.0.4",
+    "ember-cli-datepicker": "2.0.1",
+    "ember-cli-moment-shim": "1.3.0",
+    "eonasdan-bootstrap-datetimepicker": "4.15.35",
     "eslint": "^2.8.0",
     "eslint-config-airbnb": "^7.0.0",
     "git-hooks": "^1.0.2",
@@ -61,11 +65,5 @@
     "phantomjs-prebuilt": "^2.1.7",
     "selectize": "^0.12.1",
     "torii": "^0.8.0"
-  },
-  "devDependencies": {
-    "ember-bootstrap-datetimepicker": "1.0.4",
-    "ember-cli-datepicker": "2.0.1",
-    "ember-cli-moment-shim": "1.3.0",
-    "eonasdan-bootstrap-datetimepicker": "4.15.35"
   }
 }
