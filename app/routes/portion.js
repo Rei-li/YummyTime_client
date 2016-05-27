@@ -5,7 +5,10 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
   model(params) {
     return Ember.RSVP.hash({
       portion: this.store.findRecord('portion', params.portion_id, { reload: true }),
-      products: this.store.findAll('product')
+      // products: this.store.findAll('product', { reload: true })
+      products: this.store.query('product', {
+        filter: { simple: { deletedByVendor: false } }
+      }, { reload: true })
     });
   }
 });

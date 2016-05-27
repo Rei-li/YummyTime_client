@@ -5,7 +5,21 @@
 
   <ul class="b-order__content">
     {{#each order.portions as |portion|}}
-      {{b-order-group order=order portion=portion owner=group.grouper}}
+      {{b-admin-portion portion=portion isManager=isManager }}
+
+    {{/each}}
+  </ul>
+
+
+  <ul class="b-order__content">
+    {{#each order.portions as |portion|}}
+      <ul class="b-order__content">
+        {{#each portion.portion-products as |portion-product|}}
+          <li class="order-list__item">
+            {{pr-portion-product product=portion-product.product }}
+          </li>
+       {{/each}}
+      </ul>
     {{/each}}
   </ul>
 
@@ -20,8 +34,9 @@
   </div>
   {{/if}}
 </div>
+{{#link-to 'order' order.id class="button _submit"}}
+     Перейти к заказу
+{{/link-to}}
 
-{{!-- {{#link-to "new-portion-order" order.id aria-label="add new portion" class="btn-new-order"}}{{/link-to}} --}}
- {{#if canAddPortion}}
- <button {{action "add"}} class="button _submit">+</button>
- {{/if}}
+
+

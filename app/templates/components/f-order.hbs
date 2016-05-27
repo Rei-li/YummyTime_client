@@ -3,6 +3,8 @@
   <h2 class="f-default__title">Добавить заказ</h2>
 
   <div class="f-default__wrapper">
+    {{date-picker date=model.time format="DD.MM.YYYY" class="f-default__field ember-view ember-text-field" valueFormat='DD.MM.YYYY'}}
+
 
     {{b-selectize content=vendors
                   optionValuePath='content.id'

@@ -24,14 +24,16 @@
    {{#each portion.portion-products as |portion-product|}}
 
     <li class="order-list__item">
-      {{pr-portion-product portion-product=portion-product }}
+      {{pr-portion-product product=portion-product.product }}
     </li>
 
 
 {{/each}}
+ {{#if isOwner }}
 {{#link-to 'portion' portion.id class="button _submit"}}
       Редактировать
     {{/link-to}}
+     {{/if}}
 
 </ul>
 {{!-- {{/each}} --}}
