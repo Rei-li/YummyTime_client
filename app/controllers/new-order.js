@@ -8,6 +8,7 @@ export default Ember.Controller.extend({
       order.set('manager', account);
       order.set('company', company);
       order.set('sum', 0);
+      order.set('date', new Date());
       order.save();
       this.transitionToRoute('company-orders', company.content.id);
     }

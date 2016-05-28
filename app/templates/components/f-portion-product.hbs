@@ -1,7 +1,10 @@
-  <div class="pr-order__row">
-  {{pr-portion-product product=portion-product.product}}
-   <div class="pr-order__money b-order-money">
-       <button {{action "remove" portion-product}} class="b-portion__remove-btn">-</button>
-
+<div class="f-portion-product">
+  <div class="f-portion-product__row">
+      {{!-- {{pr-portion-product product=portion-product.product}} --}}
+      <div class="pr-portion-product__title">
+       {{portion-product.product.title}}
     </div>
+    <div class="pr-portion-product__price">{{portion-product.product.price}}</div>
+   <button {{action "remove" portion-product}} class="b-portion__remove-btn">-</button>
   </div>
+</div>

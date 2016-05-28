@@ -1,6 +1,5 @@
-.b-portion
+.b-portion-info
   color $c-light
-  width: 100%;
 
   &:not(:last-child)
     margin-bottom: 20px;
@@ -8,35 +7,23 @@
   &__row
     display flex
     justify-content space-between
+    align-items center
     font-size 0
     color $bg-light
 
-  &__subrow-row
-     margin 15px 0
 
-
-
-  &__column
-    width 60%
-
-  &__column-small
-    width 35%
-    text-align right
-
-  &__text
+  &__text,
+  &__person
     font-size $h4-font-size
-    color $gr9
     margin-right 12px
 
   &__cost
-    font-size $h5-font-size
-    color $gr3
-    margin-left:auto
-
+    font-size $h2-font-size
+    text-align right
 
   &__remove-btn
-    width 32px
-    height 32px
+    width 45px
+    height 45px
     position relative
     padding 0
     margin-right 8px
@@ -54,7 +41,7 @@
       top 0
       bottom 0
       right 0
-      width 18px
+      width 28px
       height 2px
       background $orange
       margin auto

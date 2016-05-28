@@ -1,22 +1,21 @@
 <ul class="b-companies">
 
-  <div style="height:50px; width: 50px;"></div>
-    <li class="b-companies__item">
-      <div class="b-companies__info">
-        <span class="b-companies__title">{{session.account.email}}</span>
-      </div>
-      <div>
-        <span class="b-companies__address">Адрес: {{session.account.company.title}}</span>
-      </div>
-      </li>
-      {{#link-to 'company-orders' session.account.company.id}}link{{/link-to}}
+
+<div class="pr-order__home">
+<span class="pr-order__home-text"> Мои заказы</span>
+</div>
 
       {{admin-order-list model=model.orders}}
-
+<div class="pr-order__home">
+<span class="pr-order__home-text"> Неоплаченные заявки</span>
+</div>
+<div class="pr-order__home">
           {{#each model.portions as |portion|}}
       {{b-order-group order=portion.order portion=portion owner=group.grouper}}
     {{/each}}
-
-
+    </div>
+<div class="pr-order__home">
+{{#link-to 'company-orders' session.account.company.id    class="button _submit"}}Перейти к заказам на сегодня{{/link-to}}
+</div>
 
 </ul>
