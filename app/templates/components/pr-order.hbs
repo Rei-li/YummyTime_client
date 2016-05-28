@@ -18,24 +18,19 @@
       <div class="b-person__name">
         {{order.manager.displayName}}   {{order.manager.phone}}
       </div>
-      {{order.comment}}
-    </div>
-    <div class="pr-order__money b-order-money">
 
-    {{#each order.portions as |portion|}}
+    </div>
+
+    <div>
+     {{#each order.portions as |portion|}}
   {{#if (not-eq order.manager.id portion.owner.id) }}
-    <li class="order-list__item">
-      {{portion.owner.displayName}}
-    </li>
+     <span class="pr-order__text"> {{portion.owner.displayName}} </span>
   {{/if}}
 {{/each}}
+</div>
 
-
-
-        <span class="b-order-money__total _not-enough"
-              title="Минимальная сумма заказа {{order.vendor.minOrderCost}}">
-        </span>
-
-    </div>
   </div>
+  <div class="pr-order__comment">
+ <span class="pr-order__text"> {{order.comment}} </span>
+ </div>
 {{/link-to}}

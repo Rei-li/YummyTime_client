@@ -12,7 +12,7 @@
  {{#if isManager}}
   <div class="b-order__actions">
     <button {{action "toggleActiveState"}} class="button _submit">
-      {{#if order.active}}Заблокировать<br>заказ{{else}}Разблокировать<br>заказ{{/if}}
+      {{#if order.active}}Заблокировать заказ{{else}}Разблокировать заказ{{/if}}
     </button>
     {{#link-to 'checkout' order.id class="button _submit"}}
       Уведомить пользователей
@@ -23,5 +23,5 @@
 
 {{!-- {{#link-to "new-portion-order" order.id aria-label="add new portion" class="btn-new-order"}}{{/link-to}} --}}
  {{#if canAddPortion}}
- <button {{action "add"}} class="button _submit">+</button>
+ <button {{action "add"}} class="btn-new-order">+</button>
  {{/if}}
