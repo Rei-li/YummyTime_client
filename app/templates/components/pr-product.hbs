@@ -1,22 +1,14 @@
-  <div class="pr-order__row">
+  <div class="pr-product__row">
     <div class="pr-order__place">{{product.title}}
- {{!--    <div class="b-person__name">
-        {{product.vendor.title}}
-      </div> --}}
     </div>
-
-
     <img src={{product.image}}>
   </div>
-  <div class="pr-order__row">
-    <div class="pr-order__manager b-person">
-      <div class="b-person__name">
+  <div class="pr-product__row">
+    <div class="pr-product__description b-person">
         {{product.description}}
-      </div>
     </div>
-
-   <div class="pr-order__money b-order-money">
-   <time class="pr-order__time">{{product.price}}</time>
+   <div class="pr-product__money b-order-money">
+       <time class="pr-product__price">{{product.price}}</time>
        <button {{action "submit"}} class="button _submit">+</button>
     </div>
 

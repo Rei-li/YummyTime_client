@@ -1,34 +1,48 @@
+  <div class="b-portion">
   <h2 class="f-default__title">Добавить к заказу</h2>
 
   <div class="f-portion__row b-order">
     {{b-order-description order=model.portion.order}}
   </div>
 
- <div class="f-portion__row b-order">
-{{b-portion portion=model.portion del=(action 'removePortion' model)}}
- </div>
-
-  <div class="f-portion__row b-order">
- {{#each model.portion.portion-products as |portion-product|}}
-
-    <li class="order-list__item">
-      {{f-portion-product portion-product=portion-product remove=(action 'removePortionProduct' model.portion) }}
-    </li>
-
-{{/each}}
-{{f-portion model=model submit=(action 'addToOrder' model.portion)}}
- </div>
+ <div class="b-portion__row">
 
 
-
-
-
+<div class="b-portion__column">
+<div class="portion-list">
 {{#each model.products as |product|}}
   {{#if (eq product.vendor.id model.portion.order.vendor.id) }}
-    <li class="order-list__item">
+    <li class="portion-list__item">
       {{pr-product product=product submit=(action 'addToPortion' model)}}
     </li>
   {{/if}}
 {{/each}}
+</div>
+</div>
+
+
+
+<div class="b-portion__column-small">
+ <div class="b-portion__row">
+    {{b-portion portion=model.portion del=(action 'removePortion' model)}}
+ </div>
+  <div class="portion-list">
+    {{#each model.portion.portion-products as |portion-product|}}
+    <li class="portion-list__item">
+      {{f-portion-product portion-product=portion-product remove=(action 'removePortionProduct' model.portion) }}
+    </li>
+    {{/each}}
+    <div class="b-portion__subrow-row">
+    {{f-portion model=model submit=(action 'addToOrder' model.portion)}}
+    </div>
+ </div>
+
+</div>
+
+
+
+</div>
+
+</div>
 
 

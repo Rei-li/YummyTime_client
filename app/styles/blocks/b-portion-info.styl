@@ -6,22 +6,24 @@
 
   &__row
     display flex
+    justify-content space-between
     align-items center
     font-size 0
+    color $bg-light
 
-  &__text
+
+  &__text,
+  &__person
     font-size $h4-font-size
-    color $bg-dark
     margin-right 12px
 
   &__cost
-    font-size $h5-font-size
-    color $bg-dark
-    margin-right auto
+    font-size $h2-font-size
+    text-align right
 
   &__remove-btn
-    width 32px
-    height 32px
+    width 45px
+    height 45px
     position relative
     padding 0
     margin-right 8px
@@ -39,7 +41,7 @@
       top 0
       bottom 0
       right 0
-      width 18px
+      width 28px
       height 2px
       background $orange
       margin auto

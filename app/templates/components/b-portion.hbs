@@ -1,15 +1,12 @@
 <div class="b-portion-info">
 <div class="b-portion-info__row">
+ <div class="b-portion-info__row">
   {{#if canDelete}}
     <button class="b-portion-info__remove-btn" {{action 'del'}}></button>
   {{else}}
     <button class="b-portion-info__remove-btn _disabled"></button>
   {{/if}}
-      <div class="b-order-group-info__person b-person">
-      <span class="b-person-info__name">{{portion.owner.displayName}}</span>
-      <span class="b-person-info__phone">{{portion.owner.phone}}</span>
-    </div>
-  <div class="b-portion-info__text">{{portion.text}}</div>
+ </div>
   <div class="b-portion-info__cost">{{portion.cost}}</div>
 </div>
 </div>
