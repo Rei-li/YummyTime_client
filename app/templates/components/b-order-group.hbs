@@ -19,10 +19,12 @@
 
 {{/each}}
  {{#if isOwner }}
+  {{#if order.active }}
 {{#link-to 'portion' portion.id class="button _submit"}}
       Редактировать
     {{/link-to}}
      {{/if}}
+      {{/if}}
 
 </ul>
 {{!-- {{/each}} --}}
