@@ -11,32 +11,36 @@
   </ul>
 
 
-  <ul class="b-order__content">
+  <ul class="b-order__list">
     {{#each order.portions as |portion|}}
       <ul class="b-order__content">
         {{#each portion.portion-products as |portion-product|}}
-          <li class="order-list__item">
+          {{!-- <li class="order-list__item"> --}}
             {{pr-portion-product product=portion-product.product }}
-          </li>
+          {{!-- </li> --}}
        {{/each}}
       </ul>
     {{/each}}
   </ul>
 
+ <div class="b-order__actions">
  {{#if isManager}}
-  <div class="b-order__actions">
+
     <button {{action "toggleActiveState"}} class="button _submit">
-      {{#if order.active}}Заблокировать<br>заказ{{else}}Разблокировать<br>заказ{{/if}}
+      {{#if order.active}}Заблокировать <br> заказ{{else}}Разблокировать <br> заказ{{/if}}
     </button>
     {{#link-to 'checkout' order.id class="button _submit"}}
-      Уведомить пользователей
+      Уведомить  <br> пользователей
     {{/link-to}}
-  </div>
+
   {{/if}}
-</div>
-{{#link-to 'order' order.id class="button _submit"}}
-     Перейти к заказу
+
+  {{#link-to 'order' order.id class="button _submit"}}
+     Перейти <br> к заказу
 {{/link-to}}
+</div>
+</div>
+
 
 
 
